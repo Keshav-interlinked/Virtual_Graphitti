@@ -265,8 +265,8 @@ canvas.addEventListener("touchmove", (e) => {
   const currentX = e.touches[0].clientX - rect.left;
   const currentY = e.touches[0].clientY - rect.top;
 
-  sprayCan.style.left = `${e.clientX - 10}px`;
-  sprayCan.style.top = `${e.clientY - 3}px`;
+  sprayCan.style.left = `${e.touches[0].clientX - 10}px`;
+  sprayCan.style.top = `${e.touches[0].clientY - 3}px`;
   sprayCan.style.transform = "rotate(-10deg)";
 
   if (isDrawing) {

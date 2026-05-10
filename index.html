@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Graffiti Wall</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Graffiti Wall</h1>
+    </div>
+    <div class="container">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="color-palette">
+          <!-- Colors will be added via JS or hardcoded -->
+        </div>
+
+        <input type="color" id="colorPicker" value="#FF0000" />
+
+        
+      </div>
+    </div>
+    <div class="settings">
+      <label 
+          >Size: <input type="range" id="brushSize" min="1" max="50" value="8"
+        /></label>
+
+        <button id="clearBtn" style="font-size: medium;">Clear Canvas</button>
+        <button id="saveBtn" style="font-size: medium;">Save Image</button>
+    </div>
+    <div> <!-- Canvas -->
+    <canvas id="canvas"></canvas></div>
+   
+
+    <!-- Spray can visual (optional floating emoji) -->
+    <div id="sprayCan" class="spray-can">
+      <img
+        src="media/spray-paint-can.png"
+        alt="spray_can"
+        height="70px"
+        width="45px"
+      />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.title{
+  position: absolute;
+  top: 0px;
+  
+
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+label{
+  font-size: larger;
+}
+
+.toolbar {
+  position: fixed;
+  z-index: 1;
+  bottom:0px;
+  left: 0px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.settings {
+  position: fixed;
+  z-index: 1;
+  top:0px;
+  right: 0px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+
+}
+
+.color-palette {
+  display: flex;
+  gap: 8px;
+}
+
+
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff; /* White page, or use an image for texture */
+  cursor: none; /* Hide default cursor */
+}
+
+.spray-can {
+  position: absolute;
+  font-size: 48px;
+  pointer-events: none;
+  transition: transform 0.05s;
+  z-index: 100;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}

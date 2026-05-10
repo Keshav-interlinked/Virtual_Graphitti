@@ -254,8 +254,9 @@ canvas.addEventListener("touchstart", (e) => {
   lastX = e.touches[0].clientX - rect.left;
   lastY = e.touches[0].clientY - rect.top;
 
-  sprayCan.style.left = `${e.touches[0].clientX}px`;
-  sprayCan.style.top = `${e.touches[0].clientY}px`;
+  // Move spray can emoji with proper offset (same as mouse)
+  sprayCan.style.left = `${e.touches[0].clientX - 10}px`;
+  sprayCan.style.top = `${e.touches[0].clientY - 3}px`;
   sprayCan.style.transform = "rotate(-10deg)";
 
   spray(lastX, lastY, currentColor, parseInt(brushSize.value));
@@ -269,8 +270,9 @@ canvas.addEventListener("touchmove", (e) => {
   const currentX = e.touches[0].clientX - rect.left;
   const currentY = e.touches[0].clientY - rect.top;
 
-  sprayCan.style.left = `${e.touches[0].clientX}px`;
-  sprayCan.style.top = `${e.touches[0].clientY}px`;
+  // Move spray can emoji with proper offset (same as mouse)
+  sprayCan.style.left = `${e.touches[0].clientX - 10}px`;
+  sprayCan.style.top = `${e.touches[0].clientY - 3}px`;
   sprayCan.style.transform = "rotate(-10deg)";
   // Positions a spray can emoji (🎨) to follow the mouse cursor
   // e.clientX + 20 = offset 20px to the right of cursor
@@ -313,3 +315,4 @@ canvas.addEventListener("touchmove", (e) => {
 });
 
 canvas.addEventListener("touchend", stopDrawingAndSound);
+canvas.addEventListener("touchcancel", stopDrawingAndSound);

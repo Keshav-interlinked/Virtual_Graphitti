@@ -10,6 +10,12 @@ body {
   min-height: 100vh;
   width: 100vw;
   overflow: hidden;
+  -webkit-touch-callout: none; /* Disable callouts on iOS */
+  -webkit-user-select: none; /* Disable text selection on iOS */
+  -khtml-user-select: none; /* Disable text selection on Konqueror */
+  -moz-user-select: none; /* Disable text selection on Firefox */
+  -ms-user-select: none; /* Disable text selection on IE/Edge */
+  user-select: none; /* Disable text selection */
 }
 
 .title {
@@ -87,6 +93,7 @@ canvas {
   left: 0;
   background: #fff; /* White page, or use an image for texture */
   cursor: none; /* Hide default cursor */
+  touch-action: none; /* Prevent scrolling/zooming on touch devices */
 }
 
 .spray-can {

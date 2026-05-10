@@ -12,11 +12,10 @@ body {
   overflow: hidden;
 }
 
-.title{
-  position: absolute;
+.title {
+  z-index: 1;
+  position: fixed;
   top: 0px;
-  
-
 }
 
 .container {
@@ -29,14 +28,14 @@ h1 {
   color: #111;
 }
 
-label{
+label {
   font-size: larger;
 }
 
 .toolbar {
   position: fixed;
   z-index: 1;
-  bottom:0px;
+  bottom: 0px;
   left: 0px;
   margin-bottom: 10px;
   display: flex;
@@ -52,7 +51,7 @@ label{
 .settings {
   position: fixed;
   z-index: 1;
-  top:0px;
+  top: 0px;
   right: 0px;
   margin-bottom: 10px;
   display: flex;
@@ -63,15 +62,12 @@ label{
   background: #222;
   padding: 10px;
   border-radius: 8px;
-
 }
 
 .color-palette {
   display: flex;
   gap: 8px;
 }
-
-
 
 .color-swatch {
   width: 40px;
@@ -81,7 +77,6 @@ label{
   border: 2px solid #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-
 
 canvas {
   display: block;

@@ -266,8 +266,12 @@ canvas.addEventListener("touchmove", (e) => {
   const currentY = e.touches[0].clientY - rect.top;
 
   sprayCan.style.left = `${e.touches[0].clientX}px`;
-  sprayCan.style.top = `${e.touches[0].clientY}px`;
+  sprayCan.style.top = `${e.touches[0].clientY + 6}px`;
   sprayCan.style.transform = "rotate(-10deg)";
+  // Positions a spray can emoji (🎨) to follow the mouse cursor
+  // e.clientX + 20 = offset 20px to the right of cursor
+  // e.clientY - 30 = offset 30px above the cursor
+  // rotate(-30deg) = tilts the emoji for a realistic spray can angle
 
   if (isDrawing) {
     // === INTERPOLATION: Draw between last and current position ===

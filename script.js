@@ -251,8 +251,8 @@ canvas.addEventListener("touchstart", (e) => {
   e.preventDefault();
   isDrawing = true;
   const rect = canvas.getBoundingClientRect();
-  const lastX = e.touches[0].clientX - rect.left;
-  const lastY = e.touches[0].clientY - rect.top;
+  lastX = e.touches[0].clientX - rect.left;
+  lastY = e.touches[0].clientY - rect.top;
 
   spray(lastX, lastY, currentColor, parseInt(brushSize.value));
   spraySound.currentTime = 0;
@@ -264,6 +264,10 @@ canvas.addEventListener("touchmove", (e) => {
   const rect = canvas.getBoundingClientRect();
   const currentX = e.touches[0].clientX - rect.left;
   const currentY = e.touches[0].clientY - rect.top;
+
+  sprayCan.style.left = `${e.clientX - 10}px`;
+  sprayCan.style.top = `${e.clientY - 3}px`;
+  sprayCan.style.transform = "rotate(-10deg)";
 
   if (isDrawing) {
     // === INTERPOLATION: Draw between last and current position ===

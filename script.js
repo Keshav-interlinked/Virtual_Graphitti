@@ -1,14 +1,5 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d"); //fetches canvas API and lets us draw on canvas,canvas is the HTML <canvas> element (your drawing surface)
-
-// Set canvas size to match window dimensions
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  setBackground(); // Redraw background after resize
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
 const colorPicker = document.getElementById("colorPicker");
 const brushSize = document.getElementById("brushSize");
 const clearBtn = document.getElementById("clearBtn");
@@ -69,13 +60,32 @@ colorPicker.addEventListener("input", (e) => (currentColor = e.target.value));
 //e.target.value gets the selected color as a hex value (like "#FF5733")
 //currentColor = e.target.value updates your global currentColor variable
 
+const bgImage = new Image();
+bgImage.src = "media/brick_wall.jpg"; // your image file
+
 // Background (white or decorative)
 function setBackground() {
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  if (bgImage.complete && bgImage.naturalWidth) {
+    ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+  } else {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
   // Optional: Add light texture or grid
 }
-setBackground();
+
+bgImage.onload = () => {
+  setBackground();
+};
+
+// Set canvas size to match window dimensions
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  setBackground(); // Redraw background after resize
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 // Spray function
 function spray(x, y, color, size) {

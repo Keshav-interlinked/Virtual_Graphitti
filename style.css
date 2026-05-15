@@ -21,7 +21,10 @@ body {
 .title {
   z-index: 1;
   position: fixed;
-  top: 0px;
+  top: 0px ;
+  left: 0px;
+  font-family: "Caveat", cursive;
+  font-size: 40px;
 }
 
 .container {
@@ -31,7 +34,8 @@ body {
 
 h1 {
   margin-bottom: 10px;
-  color: #111;
+  color: #ffffff;
+  text-decoration: wavy;
 }
 
 label {

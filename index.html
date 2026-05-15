@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Graffiti Wall</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+    </style>
   </head>
   <body>
-    <div class="title">
-      <h1>Graffiti_Wall</h1>
-    </div>
+    <h1><div class="title">Graffiti_Wall</div></h1>
+
     <div class="container">
       <!-- Toolbar -->
       <div class="toolbar">
@@ -18,21 +20,20 @@
         </div>
 
         <input type="color" id="colorPicker" value="#FF0000" />
-
-        
       </div>
     </div>
     <div class="settings">
-      <label 
-          >Size: <input type="range" id="brushSize" min="1" max="50" value="8"
-        /></label>
+      <label
+        >Size: <input type="range" id="brushSize" min="1" max="50" value="8"
+      /></label>
 
-        <button id="clearBtn" style="font-size: medium;">Clear Canvas</button>
-        <button id="saveBtn" style="font-size: medium;">Save Image</button>
+      <button id="clearBtn" style="font-size: medium">Clear Canvas</button>
+      <button id="saveBtn" style="font-size: medium">Save Image</button>
     </div>
-    <div> <!-- Canvas -->
-    <canvas id="canvas"></canvas></div>
-   
+    <div>
+      <!-- Canvas -->
+      <canvas id="canvas"></canvas>
+    </div>
 
     <!-- Spray can visual (optional floating emoji) -->
     <div id="sprayCan" class="spray-can">
